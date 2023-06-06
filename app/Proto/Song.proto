@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mypackage;
+
+message SongProto {
+    uint64 id = 1; 
+    string name = 2;
+    string singer = 3;
+}
+
+message SongsProto {
+    repeated SongProto songs = 1;
+}
