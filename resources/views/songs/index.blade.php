@@ -1,20 +1,18 @@
-<div class="container">
-<table class="table">
-    <thead>
+<table>
+  <thead>
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Singer</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Singer</th>
     </tr>
-    </thead>
-    <tbody>
-    @foreach($data as $row)
-        <tr>
-        <td>{{ $row['id'] }}</td>
-        <td>{{ $row['name'] }}</td>
-        <td>{{ $row['singer'] }}</td>
-        </tr>
+  </thead>
+  <tbody>
+    @foreach ($data as $record)
+      <tr>
+        <td>{{ $record->id }}</td>
+        <td>{{ $record->name }}</td>
+        <td>{{ $record->singer }}</td>
+      </tr>
     @endforeach
-    </tbody>
+  </tbody>
 </table>
-</div>

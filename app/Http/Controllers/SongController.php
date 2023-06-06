@@ -9,9 +9,6 @@ use Mypackage\SongsProto;
 
 class SongController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function getSongProtobuf()
     {
         $songs = Song::limit(5000)->get();
@@ -27,7 +24,6 @@ class SongController extends Controller
         }
 
         $songList = new SongsProto();
-        // print_r($songArray);
         $songList->setSongs($songArray);
 
         return response($songList->serializeToString(),200);
@@ -37,8 +33,7 @@ class SongController extends Controller
     {
         $songs = Song::take(5000)->get();
 
-        return response()->json($songs);
-        // $data = response()->json($songs);
-        // return view('songs/index', ['data' => $data]);
+        // return response()->json($songs);
+        return view('songs/index', ['data' => $songs]);
     }
 }
